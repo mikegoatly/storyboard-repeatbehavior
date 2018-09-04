@@ -7,8 +7,24 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+<Page.Resources>
+    <Storyboard x:Name="FlashTicker"
+                Duration="00:00:1"
+                RepeatBehavior="Forever">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity"
+                                       Storyboard.TargetName="Flash">
+            <EasingDoubleKeyFrame KeyTime="0"
+                                  Value="1" />
+            <EasingDoubleKeyFrame KeyTime="00:00:00.1"
+                                  Value="1" />
+            <EasingDoubleKeyFrame KeyTime="00:00:00.2"
+                                  Value="0" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+    </Page.Resources>
     <Grid>
+        <Border x:Name="Flash" Background="Red" BorderBrush="Yellow" BorderThickness="4" Width="100" Height="100">
 
+        </Border>
     </Grid>
 </Page>

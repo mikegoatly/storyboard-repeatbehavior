@@ -25,6 +25,7 @@ namespace RepeatBehaviorRepro
         public MainPage()
         {
             this.InitializeComponent();
+            this.FlashTicker.Begin();
         }
     }
 }
